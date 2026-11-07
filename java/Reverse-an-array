@@ -1,0 +1,38 @@
+/*
+Given an array, reverse its elements without creating another array.
+numbers = {1, 2, 3, 4, 5};
+*/
+
+// Two pointers 
+
+import java.util.Arrays;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        int[] numbers = {1, 2, 3, 4, 5};
+
+        // initialize the two pointers 
+        int left = 0; // start at the beginning 
+        int right = numbers.length - 1; // start at the end 
+
+        // we loop over the array and keep swapping 
+        // while the left pointers is before the right pointer 
+        // if they meet , we done 
+        while (left < right) {
+            // swap the elements 
+            // we will save each element in temp value before swapping
+            int temp = numbers[left];
+            numbers[left] = numbers[right];
+            numbers[right] = temp;
+
+            // move pointers
+            left++;
+            right--;
+        }
+
+        System.out.println(Arrays.toString(numbers));
+
+    }
+}
