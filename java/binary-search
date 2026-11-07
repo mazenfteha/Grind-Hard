@@ -1,0 +1,47 @@
+/*
+Given a sorted array and a target number, find the index of that number. If it doesn't exist, return -1
+requires the array to be sorted
+*/
+
+// we will use 3 points to search 
+// first and middle and last 
+
+
+
+public class Main {
+
+    static int binarySearch(int[] numbers, int target){
+        // define the two pointers 
+        int lo = 0;
+        int hi = numbers.length - 1;
+
+        // as long as low is less than or equal high there are items to search
+        while (lo <= hi) {
+            // calculate the middle index 
+            int mid = lo + (hi - lo) / 2;
+
+            // check wether we found the target 
+            if (numbers[mid] == target) return mid;
+
+            // if not found in the middle (middle small than the target we search in the right)
+            if(numbers[mid] < target) lo = mid + 1 ; // move to right
+
+            // if the middle is greater than the element we should search left 
+            else hi = mid - 1; // move left
+        }
+        // if we do not find the target 
+        return -1;
+    }
+
+    public static void main(String[] args) {
+
+        int[] numbers = {2, 5, 8, 12, 16, 23, 38, 45};
+
+        int target = 23;
+
+        int result = binarySearch(numbers, target);
+
+        System.out.println("Target index: " + result);
+
+    }
+}
