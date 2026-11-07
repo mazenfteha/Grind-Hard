@@ -1,0 +1,37 @@
+public class Main {
+
+    /*
+    -determine this is a palindrome or not
+    palindrome is a string that reads the same backward as forward
+    */
+
+
+    static boolean isPalindrome(String name){
+        // we will initialize two pointers also like swap array 
+        // stings is a array of characters 
+        int left = 0;
+        int right = name.length() - 1;
+
+        // loop through the two pointers have not meet yet 
+        while (left < right) {
+            // we should compare left and right characters 
+            if (name.charAt(left) != name.charAt(right)) return false;
+
+            // move the pointers
+            left++;
+            right--;
+        }
+        return true;
+    }
+
+
+    public static void main(String[] args) {
+
+        String name = "madam";
+
+        boolean isPalindromeString = isPalindrome(name);
+
+        System.out.println("The string is PalindromeString?" +  " " +isPalindromeString);
+
+    }
+}
