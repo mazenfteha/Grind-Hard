@@ -1,0 +1,27 @@
+// Find the largest number in an array
+
+/*
+int[] numbers = {3, 9, 2, 15, 6, 4};
+Largest number: 15
+*/
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        int[] numbers = {3, 9, 2, 15, 6, 4};
+
+        // intialize the larget number to the first element of the array , why not makee it zero because if the array has all negative numbers then the largest number will be negative and we will not be able to find it if we initialize it to zero
+        int max = numbers[0];
+
+        // loop through the array 
+        // and we will start at the 1 index , we already use index 0 to our max
+        for (int i = 1; i < numbers.length; i++) {
+            if (numbers[i] > max) {
+                max = numbers[i];
+            }
+        }
+
+        System.out.println("Largest Number: " + max);
+    }
+}
